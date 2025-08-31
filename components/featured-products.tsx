@@ -43,7 +43,7 @@ const FeaturedProducts = () => {
                 if (imageUrl) {
                   fullImageUrl = imageUrl.startsWith("http")
                     ? imageUrl
-                    : `${process.env.NEXT_PUBLIC_BACKEND_URL}${imageUrl}`;
+                    : `${imageUrl}`;
                 }
 
                 return (

@@ -25,7 +25,7 @@ const ChooseCategory = () => {
               >
                 {imagenUrl && (
                   <img
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${imagenUrl}`}
+                    src={`${imagenUrl}`}
                     alt={categoria.categoriaName}
                     className="w-full h-56 object-cover"
                   />

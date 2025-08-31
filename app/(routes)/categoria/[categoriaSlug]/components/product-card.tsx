@@ -42,7 +42,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               product.imagenes.map((img) => (
                 <CarouselItem key={img.id} className="group relative">
                   <img
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${img.url}`}
+                    src={`${img.url}`}
                     alt={img.alternativeText || img.name}
                     className="rounded-xl w-full h-48 object-cover border"
                   />

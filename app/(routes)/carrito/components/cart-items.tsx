@@ -15,7 +15,7 @@ const CartItem = ({ product }: CartItemProps) => {
 
  
   const imageUrl = product.imagenes?.[0]?.formats?.thumbnail?.url || product.imagenes?.[0]?.url
-  const fullImageUrl = imageUrl ? `${process.env.NEXT_PUBLIC_BACKEND_URL}${imageUrl}` : "/placeholder.png"
+  const fullImageUrl = imageUrl ? `${imageUrl}` : "/placeholder.png"
 
   return (
     <div>

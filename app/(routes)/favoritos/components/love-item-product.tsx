@@ -16,7 +16,7 @@ const LovedItemProduct = ({ product }: LovedItemProductProps) => {
   const imageUrl =
     product.imagenes?.[0]?.formats?.thumbnail?.url || product.imagenes?.[0]?.url
   const fullImageUrl = imageUrl
-    ? `${process.env.NEXT_PUBLIC_BACKEND_URL}${imageUrl}`
+    ? `${imageUrl}`
     : "/placeholder.png"
 
   return (
