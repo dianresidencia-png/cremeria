@@ -37,14 +37,17 @@ const FeaturedProducts = () => {
                     ? imagenes[0]
                     : null;
 
+                // Corregir la obtención de la URL de imagen
                 const imageUrl = primeraImagen?.url;
                 let fullImageUrl = "/placeholder.jpg";
 
                 if (imageUrl) {
-                  fullImageUrl = imageUrl.startsWith("http")
-                    ? imageUrl
-                    : `${imageUrl}`;
+                  // Si la URL ya es completa (comienza con http o https), úsala tal como está
+                  // Si es relativa, probablemente no necesites agregar nada más
+                  fullImageUrl = imageUrl.startsWith("http") ? imageUrl : imageUrl;
                 }
+
+                console.log('URL de imagen:', fullImageUrl); // Para debug
 
                 return (
                   <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group">
@@ -56,6 +59,7 @@ const FeaturedProducts = () => {
                             alt={primeraImagen?.alternativeText || productoNombre || "Producto"}
                             className="w-full h-full object-contain"
                             onError={(e) => {
+                              console.log('Error cargando imagen:', fullImageUrl);
                               e.currentTarget.src = "/placeholder.jpg";
                             }}
                           />
